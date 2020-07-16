@@ -10,7 +10,8 @@ class ApplicationController < ActionController::API
         token = headers.split(" ")[1]
 
         begin
-            user_id = JWT.decode(token, "se042020")[0]["user_id"]
+            # user vs user_id
+            user_id = JWT.decode(token, "se042020")[0]["id"]
             user = User.find(user_id)
         rescue
             user = nil

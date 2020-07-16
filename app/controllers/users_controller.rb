@@ -3,9 +3,11 @@ class UsersController < ApplicationController
     skip_before_action :logged_in?, only: [:create, :show]
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find(params[:user][:id])
         render json: @user 
     end
+
+    # update and show params structure
     
     def create
         @user = User.new(user_params)
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
     end
     
     def update
-         @user = User.find(params[:id])
+         @user = User.find(params[:user][:id])
          if @user.update(user_params)
             render json: @user
         else 
