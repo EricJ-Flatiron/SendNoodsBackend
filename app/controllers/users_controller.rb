@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
     skip_before_action :logged_in?, only: [:create, :show]
 
+
+    # Do I even need to use #show? I could grab all the info from localStorage
+    # is this a safety risk?
+    
     def show
         @user = User.find(params[:user][:id])
         render json: @user 
