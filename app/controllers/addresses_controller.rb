@@ -6,7 +6,7 @@ class AddressesController < ApplicationController
     end
 
     def create
-        @address = address.create(address_params)
+        @address = Address.create(address_params)
         if @address.valid?
             render json: {address: @address}, status: :created
         else
@@ -15,7 +15,7 @@ class AddressesController < ApplicationController
     end
   
     def update
-      @address = address.find(params[:address][:id])
+      @address = Address.find(params[:address][:id])
       if @address.update(address_params)
           render json: @address
       else 
@@ -24,7 +24,7 @@ class AddressesController < ApplicationController
     end
   
     def destroy
-      @address = address.find_by_id(params[:address][:id])
+      @address = Address.find_by_id(params[:address][:id])
       unless @address.nil?
         @address.destroy
         render json: {error: 'Address has been deleted'}

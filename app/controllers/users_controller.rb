@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:user][:id])
-        render json: @user #show addresses and orders?
+        render json: @user, include: [:addresses, :orders] #show addresses and orders?
     end
 
     # update and show params structure

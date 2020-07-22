@@ -3,4 +3,5 @@ class User < ApplicationRecord
     validates :email, uniqueness: { case_sensitive: false }
 
     has_many :addresses
+    has_many :orders
 end
