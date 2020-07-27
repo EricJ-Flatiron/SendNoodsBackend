@@ -1029,3 +1029,366 @@ Migrating to CreateAddons (20200721163251)
   [1m[36mNoodle Load (0.4ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."order_id" = $1[0m  [["order_id", 1]]
   [1m[36mAddon Load (0.7ms)[0m  [1m[34mSELECT "addons".* FROM "addons" INNER JOIN "noodles" ON "addons"."noodle_id" = "noodles"."id" WHERE "noodles"."order_id" = $1[0m  [["order_id", 1]]
   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (6.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2020-07-22 19:31:51 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ENJohnson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ENJohnson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 306)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 1509)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-07-22 19:31:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-07-22 19:32:24 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ENJohnson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ENJohnson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.9ms | Allocations: 191)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 715)
+
+
+Started POST "/login" for ::1 at 2020-07-26 21:52:29 -0500
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"firstlast@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"firstlast@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "firstlast@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 34.6ms | Allocations: 8052)
+
+
+Started POST "/signup" for ::1 at 2020-07-26 22:07:25 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]", "first_name"=>"asdf", "last_name"=>"asdf"}}
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "asdf@asdf.com"], ["password_digest", "$2a$12$89e/6.hwSM33Ph7egQZWieyR2/YF80ZsClESeAWEQVQQvHFqugta2"], ["first_name", "asdf"], ["last_name", "asdf"], ["created_at", "2020-07-27 03:07:25.304627"], ["updated_at", "2020-07-27 03:07:25.304627"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 263ms (Views: 0.3ms | ActiveRecord: 8.6ms | Allocations: 5080)
+
+
+Started POST "/signup" for ::1 at 2020-07-26 22:07:28 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]", "first_name"=>"asdf", "last_name"=>"asdf"}}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 406 Not Acceptable in 252ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2617)
+
+
+Started POST "/signup" for ::1 at 2020-07-26 22:07:41 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@gmail.com", "password"=>"[FILTERED]", "first_name"=>"asdf", "last_name"=>"asdf"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "asdf@gmail.com"], ["password_digest", "$2a$12$NSUTzhzUdz1G5khdysRiGuRecWyfML5jeMhPBdyci4jIEdNikO5A2"], ["first_name", "asdf"], ["last_name", "asdf"], ["created_at", "2020-07-27 03:07:41.775577"], ["updated_at", "2020-07-27 03:07:41.775577"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 253ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 4520)
+
+
+Started POST "/signup" for ::1 at 2020-07-26 22:07:47 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@gmail.com", "password"=>"[FILTERED]", "first_name"=>"asdf", "last_name"=>"asdf"}}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 406 Not Acceptable in 249ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1503)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/signup" for ::1 at 2020-07-26 22:09:41 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdfasdf@asdf.com", "password"=>"[FILTERED]", "first_name"=>"asdf", "last_name"=>"asdf"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdfasdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdfasdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "asdfasdf@asdf.com"], ["password_digest", "$2a$12$dOjqK0eAFVCIjDTfhhvWqeszHHfujmEcEexbyRpaNm3WyrSP/TLMa"], ["first_name", "asdf"], ["last_name", "asdf"], ["created_at", "2020-07-27 03:09:41.762824"], ["updated_at", "2020-07-27 03:09:41.762824"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 267ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 4501)
+
+
+Started POST "/signup" for ::1 at 2020-07-26 22:11:09 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"asdfasdfasdf@asdf.com", "password"=>"[FILTERED]", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf"}}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdfasdfasdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdfasdfasdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "asdfasdfasdf@asdf.com"], ["password_digest", "$2a$12$EijLZs9x83DjNHDUX0Aa4OzqLIUN1jebH9HWWSOmgl4Q1Wpmx5u8a"], ["first_name", "asdfasdf"], ["last_name", "asdfasdf"], ["created_at", "2020-07-27 03:11:09.769321"], ["updated_at", "2020-07-27 03:11:09.769321"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 265ms (Views: 0.6ms | ActiveRecord: 7.7ms | Allocations: 4498)
+
+
+Started POST "/login" for ::1 at 2020-07-26 22:12:40 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 927)
+
+
+Started POST "/login" for ::1 at 2020-07-26 22:18:27 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 243ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 857)
+
+
+Started POST "/login" for ::1 at 2020-07-26 22:34:13 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 287ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 944)
+
+
+Started POST "/login" for ::1 at 2020-07-27 00:01:54 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 944)
+
+
+Started POST "/login" for ::1 at 2020-07-27 00:11:52 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 261ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 945)
+
+
+Started POST "/login" for ::1 at 2020-07-27 00:14:00 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 250ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 858)
+
+
+Started POST "/login" for ::1 at 2020-07-27 00:14:27 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 249ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 858)
+
+
+Started POST "/login" for ::1 at 2020-07-27 00:16:21 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 248ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 857)
+
+
+Started POST "/login" for ::1 at 2020-07-27 10:01:50 -0500
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/auth_controller.rb:8: syntax error, unexpected ':', expecting =>
+...me: user.last_name, :addresses: user.addresses} 
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/auth_controller.rb:8: syntax error, unexpected '}', expecting end
+...me, :addresses: user.addresses} 
+...                              ^):
+  
+app/controllers/auth_controller.rb:8: syntax error, unexpected ':', expecting =>
+app/controllers/auth_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/auth_controller.rb:8: syntax error, unexpected ':', expecting =>
+app/controllers/auth_controller.rb:8: syntax error, unexpected '}', expecting end
+Started POST "/login" for ::1 at 2020-07-27 10:02:27 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (6.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 288ms (Views: 3.7ms | ActiveRecord: 19.6ms | Allocations: 11016)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Destroy (0.4ms)[0m  [1m[31mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (6.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNoodle Load (0.7ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "noodles" WHERE "noodles"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddon Load (0.7ms)[0m  [1m[34mSELECT "addons".* FROM "addons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddon Destroy (0.5ms)[0m  [1m[31mDELETE FROM "addons" WHERE "addons"."id" = $1[0m  [["id", 1]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddon Destroy (0.5ms)[0m  [1m[31mDELETE FROM "addons" WHERE "addons"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "firstlast@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "firstlast@gmail.com"], ["password_digest", "$2a$12$FNhVLSNvxjj7Dt96048TT.IDw.V8lRZyYm2pxUEvDdw6BncxqYVQS"], ["first_name", "first"], ["last_name", "last"], ["created_at", "2020-07-27 15:58:49.217928"], ["updated_at", "2020-07-27 15:58:49.217928"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAddress Create (0.5ms)[0m  [1m[32mINSERT INTO "addresses" ("name", "address_one", "address_two", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "First Last"], ["address_one", "1639 Arlington St."], ["address_two", ""], ["city", "Houston"], ["state", "TX"], ["zip", 77008], ["user_id", 6], ["created_at", "2020-07-27 15:58:49.238890"], ["updated_at", "2020-07-27 15:58:49.238890"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 0.0], ["user_id", 6], ["created_at", "2020-07-27 15:58:49.265071"], ["updated_at", "2020-07-27 15:58:49.265071"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 15.5], ["description", "de noodoh"], ["group", "Miso"], ["order_id", 2], ["created_at", "2020-07-27 15:58:49.270287"], ["updated_at", "2020-07-27 15:58:49.270287"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Load (0.2ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAddon Create (0.5ms)[0m  [1m[32mINSERT INTO "addons" ("cost", "description", "group", "noodle_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 1.5], ["description", "Ajitama"], ["group", "supplement"], ["noodle_id", 2], ["created_at", "2020-07-27 15:58:49.275519"], ["updated_at", "2020-07-27 15:58:49.275519"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Load (0.3ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAddon Create (0.3ms)[0m  [1m[32mINSERT INTO "addons" ("cost", "description", "group", "noodle_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 1.0], ["description", "spicy bomb"], ["group", "bomb"], ["noodle_id", 2], ["created_at", "2020-07-27 15:58:49.280748"], ["updated_at", "2020-07-27 15:58:49.280748"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2020-07-27 11:01:25 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 5.1ms | Allocations: 3544)
+
+
+Started POST "/login" for ::1 at 2020-07-27 11:01:47 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 700)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Destroy (0.4ms)[0m  [1m[31mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNoodle Load (0.6ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Destroy (0.5ms)[0m  [1m[31mDELETE FROM "noodles" WHERE "noodles"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddon Load (0.8ms)[0m  [1m[34mSELECT "addons".* FROM "addons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "addons" WHERE "addons"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddon Destroy (0.3ms)[0m  [1m[31mDELETE FROM "addons" WHERE "addons"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "asdf@asdf.com"], ["password_digest", "$2a$12$lhpo.zrhnZol1uIQWLzL8uSZzEiFg0nz95aySwcRc6koI2cHLTIRO"], ["first_name", "First"], ["last_name", "Last"], ["created_at", "2020-07-27 16:04:00.124587"], ["updated_at", "2020-07-27 16:04:00.124587"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAddress Create (0.5ms)[0m  [1m[32mINSERT INTO "addresses" ("name", "address_one", "address_two", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "First Last"], ["address_one", "1639 Arlington St."], ["address_two", ""], ["city", "Houston"], ["state", "TX"], ["zip", 77008], ["user_id", 7], ["created_at", "2020-07-27 16:04:00.142187"], ["updated_at", "2020-07-27 16:04:00.142187"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 0.0], ["user_id", 7], ["created_at", "2020-07-27 16:04:00.156788"], ["updated_at", "2020-07-27 16:04:00.156788"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mNoodle Create (0.5ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 15.5], ["description", "de noodoh"], ["group", "Miso"], ["order_id", 3], ["created_at", "2020-07-27 16:04:00.169935"], ["updated_at", "2020-07-27 16:04:00.169935"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Load (0.3ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAddon Create (0.5ms)[0m  [1m[32mINSERT INTO "addons" ("cost", "description", "group", "noodle_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 1.5], ["description", "Ajitama"], ["group", "supplement"], ["noodle_id", 3], ["created_at", "2020-07-27 16:04:00.191003"], ["updated_at", "2020-07-27 16:04:00.191003"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Load (0.3ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAddon Create (0.3ms)[0m  [1m[32mINSERT INTO "addons" ("cost", "description", "group", "noodle_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 1.0], ["description", "spicy bomb"], ["group", "bomb"], ["noodle_id", 3], ["created_at", "2020-07-27 16:04:00.196268"], ["updated_at", "2020-07-27 16:04:00.196268"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/login" for ::1 at 2020-07-27 11:05:01 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 339ms (Views: 38.1ms | ActiveRecord: 19.3ms | Allocations: 18724)
+
+
