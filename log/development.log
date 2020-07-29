@@ -1392,3 +1392,327 @@ Processing by AuthController#create as */*
 Completed 200 OK in 339ms (Views: 38.1ms | ActiveRecord: 19.3ms | Allocations: 18724)
 
 
+Started POST "/payment" for ::1 at 2020-07-28 14:50:30 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"items"=>[{"id"=>"xl-tshirt"}], "charge"=>{"items"=>[{"id"=>"xl-tshirt"}]}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 497)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/_application_controller.rb:10:in `logged_in?'
+Started POST "/payment" for ::1 at 2020-07-28 14:51:36 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"items"=>[{"id"=>"xl-tshirt"}], "charge"=>{"items"=>[{"id"=>"xl-tshirt"}]}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/_application_controller.rb:10:in `logged_in?'
+Started POST "/payment" for ::1 at 2020-07-28 14:51:50 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"items"=>[{"id"=>"xl-tshirt"}], "charge"=>{"items"=>[{"id"=>"xl-tshirt"}]}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/_application_controller.rb:10:in `logged_in?'
+Started POST "/login" for ::1 at 2020-07-28 16:22:02 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (6.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 337ms (Views: 17.8ms | ActiveRecord: 39.9ms | Allocations: 18721)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/charges" for ::1 at 2020-07-28 17:12:58 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA12bD7h6J7ftZv2wdQWgci", "orderId"=>7, "charge"=>{"token"=>"tok_1HA12bD7h6J7ftZv2wdQWgci", "orderId"=>7}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 497)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/_application_controller.rb:10:in `logged_in?'
+Started POST "/payment" for ::1 at 2020-07-28 17:14:05 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA13hD7h6J7ftZvyr0i4IGh", "orderId"=>7, "charge"=>{"token"=>"tok_1HA13hD7h6J7ftZvyr0i4IGh", "orderId"=>7}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/_application_controller.rb:10:in `logged_in?'
+Started POST "/payment" for ::1 at 2020-07-28 17:19:01 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA18TD7h6J7ftZvRBfEDnHV", "orderId"=>7, "charge"=>{"token"=>"tok_1HA18TD7h6J7ftZvRBfEDnHV", "orderId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 12.9ms | Allocations: 4229)
+
+
+Started POST "/login" for ::1 at 2020-07-28 18:19:19 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (6.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 326ms (Views: 17.6ms | ActiveRecord: 19.2ms | Allocations: 18692)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 18:20:48 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA26GD7h6J7ftZvx2G1woyO", "userId"=>7, "charge"=>{"token"=>"tok_1HA26GD7h6J7ftZvx2G1woyO", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 18:25:54 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA2BCD7h6J7ftZv4UOcw5Ru", "userId"=>7, "charge"=>{"token"=>"tok_1HA2BCD7h6J7ftZv4UOcw5Ru", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 2195)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 18:29:23 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA2EYD7h6J7ftZvnCbT9EgO", "userId"=>7, "charge"=>{"token"=>"tok_1HA2EYD7h6J7ftZvnCbT9EgO", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 2946)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:26:41 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA380D7h6J7ftZvOZZ5Cj8S", "userId"=>7, "charge"=>{"token"=>"tok_1HA380D7h6J7ftZvOZZ5Cj8S", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 8.2ms | Allocations: 2942)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:29:33 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3AmD7h6J7ftZvB4YLOv8Z", "userId"=>7, "charge"=>{"token"=>"tok_1HA3AmD7h6J7ftZvB4YLOv8Z", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 239)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:33:16 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3EOD7h6J7ftZvRIeya62n", "userId"=>7, "charge"=>{"token"=>"tok_1HA3EOD7h6J7ftZvRIeya62n", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 238)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:33:43 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3EpD7h6J7ftZvgLDUr90S", "userId"=>7, "charge"=>{"token"=>"tok_1HA3EpD7h6J7ftZvgLDUr90S", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 232)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:34:29 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3FZD7h6J7ftZv4zx3rO0K", "userId"=>7, "charge"=>{"token"=>"tok_1HA3FZD7h6J7ftZv4zx3rO0K", "userId"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 232)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 19:36:28 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3HUD7h6J7ftZvuIP5vukO", "userId"=>7, "charge"=>{"token"=>"tok_1HA3HUD7h6J7ftZvuIP5vukO", "userId"=>7}}
+Completed 404 Not Found in 15ms (ActiveRecord: 7.0ms | Allocations: 3092)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order without an ID):
+  
+app/controllers/charges_controller.rb:7:in `create'
+Started POST "/payment" for ::1 at 2020-07-28 19:37:31 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3IVD7h6J7ftZv8aCIFHAp", "userId"=>7, "charge"=>{"token"=>"tok_1HA3IVD7h6J7ftZv8aCIFHAp", "userId"=>7}}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 186)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:10:in `create'
+Started POST "/payment" for ::1 at 2020-07-28 19:43:18 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"token"=>"tok_1HA3O6D7h6J7ftZvBqI1IAVR", "userId"=>7, "charge"=>{"token"=>"tok_1HA3O6D7h6J7ftZvBqI1IAVR", "userId"=>7}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 129)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:10:in `create'
+Started GET "/secret" for ::1 at 2020-07-28 20:10:34 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#show as */*
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 185)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:23:in `show'
+Started GET "/secret" for ::1 at 2020-07-28 20:11:19 -0500
+Processing by ChargesController#show as */*
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 128)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:23:in `show'
+Started GET "/secret" for ::1 at 2020-07-28 20:12:28 -0500
+Processing by ChargesController#show as */*
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 128)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:23:in `show'
+Started GET "/secret" for ::1 at 2020-07-28 20:13:04 -0500
+Processing by ChargesController#show as */*
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 128)
+
+
+  
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  
+app/controllers/charges_controller.rb:23:in `show'
+Started GET "/secret" for ::1 at 2020-07-28 20:19:06 -0500
+Processing by ChargesController#show as */*
+Completed 204 No Content in 496ms (ActiveRecord: 0.0ms | Allocations: 2408)
+
+
+Started GET "/secret" for ::1 at 2020-07-28 20:34:22 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#show as */*
+Completed 204 No Content in 376ms (ActiveRecord: 0.0ms | Allocations: 2442)
+
+
+Started GET "/secret" for ::1 at 2020-07-28 20:34:57 -0500
+Processing by ChargesController#show as */*
+Completed 204 No Content in 363ms (ActiveRecord: 0.0ms | Allocations: 2109)
+
+
+Started GET "/secret" for ::1 at 2020-07-28 20:38:20 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#show as */*
+Completed 204 No Content in 393ms (ActiveRecord: 0.0ms | Allocations: 2437)
+
+
+Started GET "/secret" for ::1 at 2020-07-28 20:39:42 -0500
+Processing by ChargesController#create as */*
+Completed 204 No Content in 381ms (ActiveRecord: 0.0ms | Allocations: 2129)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 21:21:35 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+...  render json: { clientSecret : @intent.client_secret}
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+...Secret : @intent.client_secret}
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+Started POST "/payment" for ::1 at 2020-07-28 21:23:16 -0500
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+...  render json: { clientSecret : @intent.client_secret}
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+...Secret : @intent.client_secret}
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+Started POST "/payment" for ::1 at 2020-07-28 21:23:34 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+...  render json: { clientSecret : @intent.client_secret }
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+...ecret : @intent.client_secret }
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+app/controllers/charges_controller.rb:17: syntax error, unexpected ':', expecting =>
+app/controllers/charges_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/charges_controller.rb:33: syntax error, unexpected end-of-input, expecting end
+Started POST "/payment" for ::1 at 2020-07-28 21:23:57 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 0.0ms | Allocations: 1415)
+
+
+  
+Stripe::InvalidRequestError (No such customer: "YOU"):
+  
+app/controllers/charges_controller.rb:10:in `create'
+Started POST "/payment" for ::1 at 2020-07-28 21:24:22 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 379ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2519)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 21:26:11 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 432ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2162)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 21:28:42 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 394ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2167)
+
+
+Started POST "/payment" for ::1 at 2020-07-28 22:04:38 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 404ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2520)
+
+

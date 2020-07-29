@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :addresses
   resources :orders
   resources :noodles
-  resources :addons 
+  resources :addons
+  resources :charges 
 
   post "/login", to: "auth#create"
   post "/signup", to: "users#create"
   get "/profile", to: "users#show"
+  post "/payment", to: "charges#create"
+  # get '/secret', to: "charges#create"
 end
