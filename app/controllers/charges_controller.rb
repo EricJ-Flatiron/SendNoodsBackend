@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
     #   amount = order.noodles.sum(:cost)
 
       @intent = Stripe::PaymentIntent.create({
-          amount: 10001,
+          amount: 10800,
           currency: 'usd',
           description: 'Send Noods',
           metadata: {integration_check: 'accept_a_payment'},
@@ -23,7 +23,6 @@ class ChargesController < ApplicationController
     #   amount = order.noodles.sum(:cost)
 
       @intent = Stripe::PaymentIntent.create({
-          amount: 10001,
           currency: 'usd',
           metadata: {integration_check: 'accept_a_payment'},
       })

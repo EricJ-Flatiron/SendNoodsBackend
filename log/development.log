@@ -1716,3 +1716,1430 @@ Processing by ChargesController#create as */*
 Completed 200 OK in 404ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2520)
 
 
+Started POST "/login" for ::1 at 2020-07-29 14:42:17 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 346ms (Views: 18.3ms | ActiveRecord: 21.9ms | Allocations: 23061)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:48:59 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>50, "user_id"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Started POST "/login" for ::1 at 2020-07-29 21:49:18 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 252ms (Views: 2.3ms | ActiveRecord: 4.1ms | Allocations: 2092)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:50:04 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>61, "user_id"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 238)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:52:41 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>97, "user_id"=>7}}
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 2567)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:53:18 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>97, "user_id"=>7}}
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms | Allocations: 33777)
+
+
+  
+NameError (undefined local variable or method `order' for #<OrdersController:0x00007f7f75213008>
+Did you mean?  order_url):
+  
+app/controllers/orders_controller.rb:10:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 21:54:04 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>87, "user_id"=>7, "order"=>{"cost"=>87, "user_id"=>7}}
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 4.6ms | Allocations: 33751)
+
+
+  
+NameError (undefined local variable or method `order' for #<OrdersController:0x00007f7f71de9cc8>
+Did you mean?  order_url):
+  
+app/controllers/orders_controller.rb:10:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 21:54:54 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>110, "user_id"=>7, "order"=>{"cost"=>110, "user_id"=>7}}
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 3.1ms | Allocations: 33821)
+
+
+  
+NameError (undefined local variable or method `order' for #<OrdersController:0x00007f8c1c522e70>
+Did you mean?  order_url):
+  
+app/controllers/orders_controller.rb:10:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 21:55:53 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>62.5, "user_id"=>7}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 5.7ms | Allocations: 9819)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:56:32 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"cost"=>62.5, "user_id"=>7}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (6.3ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 62.5], ["user_id", 7], ["created_at", "2020-07-30 02:56:33.025910"], ["updated_at", "2020-07-30 02:56:33.025910"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 40ms (Views: 0.3ms | ActiveRecord: 19.7ms | Allocations: 15645)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:57:29 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>110, "user_id"=>7, "order"=>{"cost"=>110, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 110.0], ["user_id", 7], ["created_at", "2020-07-30 02:57:29.195684"], ["updated_at", "2020-07-30 02:57:29.195684"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 30ms (Views: 0.4ms | ActiveRecord: 13.1ms | Allocations: 15180)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 21:59:47 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>145.5, "user_id"=>7, "order"=>{"cost"=>145.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 145.5], ["user_id", 7], ["created_at", "2020-07-30 02:59:47.355339"], ["updated_at", "2020-07-30 02:59:47.355339"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 3882)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 22:01:20 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>170, "user_id"=>7, "order"=>{"cost"=>170, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 170.0], ["user_id", 7], ["created_at", "2020-07-30 03:01:20.401528"], ["updated_at", "2020-07-30 03:01:20.401528"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 3882)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 22:27:00 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>171, "user_id"=>7, "order"=>{"cost"=>171, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 171.0], ["user_id", 7], ["created_at", "2020-07-30 03:27:00.368535"], ["updated_at", "2020-07-30 03:27:00.368535"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 18ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 12803)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 22:27:00 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"noodleArray"=>[{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>8}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>8}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>8}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>8}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>8}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>8}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>8}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>8}], "order"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 228)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: order):
+  
+app/controllers/orders_controller.rb:20:in `order_params'
+app/controllers/orders_controller.rb:10:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:29:42 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>146.5, "user_id"=>7, "order"=>{"cost"=>146.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 146.5], ["user_id", 7], ["created_at", "2020-07-30 03:29:42.280779"], ["updated_at", "2020-07-30 03:29:42.280779"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 3864)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:29:42 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodleArray"=>[{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>9}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>9}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>9}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>9}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>9}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>9}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>9}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>9}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>9}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>9}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>9}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>9}], "noodle"=>{}}
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 4.2ms | Allocations: 34935)
+
+
+  
+NameError (undefined local variable or method `noodle_params' for #<NoodlesController:0x00007f85319e4658>
+Did you mean?  noodle_path):
+  
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:31:04 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>133.5, "user_id"=>7, "order"=>{"cost"=>133.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 133.5], ["user_id", 7], ["created_at", "2020-07-30 03:31:04.486091"], ["updated_at", "2020-07-30 03:31:04.486091"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 37ms (Views: 0.3ms | ActiveRecord: 12.5ms | Allocations: 13075)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:31:04 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodleArray"=>[{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>10}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>10}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>10}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>10}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>10}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>10}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>10}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>10}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>10}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>10}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>10}], "noodle"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.6ms | Allocations: 211)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: noodle):
+  
+app/controllers/noodles_controller.rb:20:in `noodle_params'
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:31:42 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>133.5, "user_id"=>7, "order"=>{"cost"=>133.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 133.5], ["user_id", 7], ["created_at", "2020-07-30 03:31:42.461481"], ["updated_at", "2020-07-30 03:31:42.461481"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 37ms (Views: 0.4ms | ActiveRecord: 14.5ms | Allocations: 15215)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:31:42 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodleArray"=>[{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>11}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>11}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>11}, {"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>11}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>11}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>11}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>11}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>11}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>11}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>11}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>11}], "noodle"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.9ms | Allocations: 219)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: noodle):
+  
+app/controllers/noodles_controller.rb:20:in `noodle_params'
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:32:54 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>134.5, "user_id"=>7, "order"=>{"cost"=>134.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 134.5], ["user_id", 7], ["created_at", "2020-07-30 03:32:54.946214"], ["updated_at", "2020-07-30 03:32:54.946214"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 27ms (Views: 0.4ms | ActiveRecord: 11.2ms | Allocations: 13020)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:32:54 -0500
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/noodles_controller.rb:21: syntax error, unexpected end, expecting ')'
+    end
+    ^~~):
+  
+app/controllers/noodles_controller.rb:21: syntax error, unexpected end, expecting ')'
+app/controllers/noodles_controller.rb:21: syntax error, unexpected end, expecting ')'
+Started POST "/orders" for ::1 at 2020-07-29 22:33:25 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>158.5, "user_id"=>7, "order"=>{"cost"=>158.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 158.5], ["user_id", 7], ["created_at", "2020-07-30 03:33:25.921535"], ["updated_at", "2020-07-30 03:33:25.921535"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 31ms (Views: 0.4ms | ActiveRecord: 13.4ms | Allocations: 15183)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:33:25 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodleArray"=>[{"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>13}}, {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>13}}], "noodle"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.7ms | Allocations: 285)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: noodle):
+  
+app/controllers/noodles_controller.rb:20:in `noodle_params'
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:34:26 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>122.5, "user_id"=>7, "order"=>{"cost"=>122.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 122.5], ["user_id", 7], ["created_at", "2020-07-30 03:34:26.214860"], ["updated_at", "2020-07-30 03:34:26.214860"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 3881)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:34:26 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>14}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>14}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>14}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>14}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>14}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>14}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>14}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>14}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>14}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>14}]}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1263)
+
+
+  
+NoMethodError (undefined method `permit' for #<Array:0x00007f9913193e90>):
+  
+app/controllers/noodles_controller.rb:20:in `noodle_params'
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:36:02 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>122.5, "user_id"=>7, "order"=>{"cost"=>122.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 122.5], ["user_id", 7], ["created_at", "2020-07-30 03:36:02.392922"], ["updated_at", "2020-07-30 03:36:02.392922"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 33ms (Views: 0.3ms | ActiveRecord: 14.6ms | Allocations: 15178)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:36:02 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>15}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>15}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>15}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>15}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>15}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>15}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>15}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>15}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>15}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>15}]}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 4.5ms | Allocations: 4876)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:40:35 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:40:35.531252"], ["updated_at", "2020-07-30 03:40:35.531252"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 38ms (Views: 0.4ms | ActiveRecord: 13.0ms | Allocations: 15212)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:40:35 -0500
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/noodles_controller.rb:8: syntax error, unexpected '\n', expecting =>
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/noodles_controller.rb:10: syntax error, unexpected '}', expecting end
+            }
+            ^):
+  
+app/controllers/noodles_controller.rb:8: syntax error, unexpected '\n', expecting =>
+app/controllers/noodles_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/noodles_controller.rb:8: syntax error, unexpected '\n', expecting =>
+app/controllers/noodles_controller.rb:10: syntax error, unexpected '}', expecting end
+Started POST "/orders" for ::1 at 2020-07-29 22:41:35 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:41:35.779567"], ["updated_at", "2020-07-30 03:41:35.779567"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 30ms (Views: 0.5ms | ActiveRecord: 13.2ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:41:35 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>17}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>17}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>17}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>17}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>17}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>17}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>17}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>17}]}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 764)
+
+
+  
+NoMethodError (undefined method `length' for #<ActionController::Parameters:0x00007fcca947d6c8>):
+  
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:42:43 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:42:43.790528"], ["updated_at", "2020-07-30 03:42:43.790528"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 30ms (Views: 0.4ms | ActiveRecord: 13.3ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:42:43 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>18}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>18}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>18}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>18}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>18}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>18}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>18}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>18}]}
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms | Allocations: 34787)
+
+
+  
+NameError (undefined local variable or method `noodle' for #<NoodlesController:0x00007fa558a73cd0>
+Did you mean?  noodle_url):
+  
+app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:43:09 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:43:09.157350"], ["updated_at", "2020-07-30 03:43:09.157350"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 30ms (Views: 0.4ms | ActiveRecord: 13.1ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:43:09 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>19}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>19}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>19}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>19}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>19}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>19}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>19}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>19}]}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.1ms | Allocations: 4887)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:44:02 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:44:03.071630"], ["updated_at", "2020-07-30 03:44:03.071630"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 39ms (Views: 0.4ms | ActiveRecord: 13.0ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:44:03 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>20}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>20}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>20}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>20}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>20}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>20}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>20}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>20}]}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.1ms | Allocations: 4922)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `each'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:45:25 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:45:25.672642"], ["updated_at", "2020-07-30 03:45:25.672642"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 34ms (Views: 0.4ms | ActiveRecord: 13.1ms | Allocations: 15178)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:45:25 -0500
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/noodles_controller.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+...if(params[:noodle].length > 0å)
+...                             ^~):
+  
+app/controllers/noodles_controller.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/noodles_controller.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started POST "/orders" for ::1 at 2020-07-29 22:45:42 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:45:42.282375"], ["updated_at", "2020-07-30 03:45:42.282375"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 30ms (Views: 0.3ms | ActiveRecord: 12.8ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:45:42 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>22}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>22}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>22}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>22}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>22}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>22}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>22}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>22}]}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.2ms | Allocations: 4892)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `each'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:46:50 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:46:50.821069"], ["updated_at", "2020-07-30 03:46:50.821069"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 32ms (Views: 0.4ms | ActiveRecord: 13.5ms | Allocations: 15183)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:46:50 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>23}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>23}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>23}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>23}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>23}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>23}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>23}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>23}]}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.2ms | Allocations: 4893)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `map'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:48:07 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:48:07.737730"], ["updated_at", "2020-07-30 03:48:07.737730"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 39ms (Views: 0.4ms | ActiveRecord: 13.2ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:48:07 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>24}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>24}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>24}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>24}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>24}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>24}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>24}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>24}]}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.0ms | Allocations: 4979)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'noodle' for Noodle.):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `map'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:48:08 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>99.5, "user_id"=>7, "order"=>{"cost"=>99.5, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 99.5], ["user_id", 7], ["created_at", "2020-07-30 03:48:08.355176"], ["updated_at", "2020-07-30 03:48:08.355176"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 8ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 3885)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:48:08 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>[{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>25}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>25}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>25}, {"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>25}, {"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>25}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>25}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>25}, {"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>25}]}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 298)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'noodle' for Noodle.):
+  
+app/controllers/noodles_controller.rb:8:in `block in create'
+app/controllers/noodles_controller.rb:7:in `map'
+app/controllers/noodles_controller.rb:7:in `create'
+Started POST "/orders" for ::1 at 2020-07-29 22:54:21 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>122.5, "user_id"=>7, "order"=>{"cost"=>122.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 122.5], ["user_id", 7], ["created_at", "2020-07-30 03:54:22.029906"], ["updated_at", "2020-07-30 03:54:22.029906"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 18ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 12836)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>26}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.063033"], ["updated_at", "2020-07-30 03:54:22.063033"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 19ms (Views: 0.3ms | ActiveRecord: 5.8ms | Allocations: 10498)
+
+
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>26}}
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>26}}
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>26}}
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>26}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>26}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.087700"], ["updated_at", "2020-07-30 03:54:22.087700"]]
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mNoodle Create (1.6ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.089656"], ["updated_at", "2020-07-30 03:54:22.089656"]]
+  [1m[36mOrder Load (2.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.094413"], ["updated_at", "2020-07-30 03:54:22.094413"]]
+  [1m[36mNoodle Create (0.3ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.096318"], ["updated_at", "2020-07-30 03:54:22.096318"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 16ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 13516)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 20ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 16997)
+
+
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 17801)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (2.5ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.113107"], ["updated_at", "2020-07-30 03:54:22.113107"]]
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 36ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 18427)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+Completed 201 Created in 43ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 22870)
+
+
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>26}}
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>26}}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>26}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.7ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.130024"], ["updated_at", "2020-07-30 03:54:22.130024"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.131287"], ["updated_at", "2020-07-30 03:54:22.131287"]]
+Completed 201 Created in 11ms (Views: 0.2ms | ActiveRecord: 4.3ms | Allocations: 8985)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.5ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.133097"], ["updated_at", "2020-07-30 03:54:22.133097"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 12ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 9577)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 14ms (Views: 0.2ms | ActiveRecord: 4.3ms | Allocations: 11791)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 22:54:22 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>26}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 26], ["created_at", "2020-07-30 03:54:22.330652"], ["updated_at", "2020-07-30 03:54:22.330652"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 3928)
+
+
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNoodle Load (0.4ms)[0m  [1m[34mSELECT "noodles".* FROM "noodles" WHERE "noodles"."order_id" = $1 LIMIT $2[0m  [["order_id", 26], ["LIMIT", 11]]
+Started POST "/orders" for ::1 at 2020-07-29 23:05:16 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>74.5, "user_id"=>7, "order"=>{"cost"=>74.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 74.5], ["user_id", 7], ["created_at", "2020-07-30 04:05:16.927559"], ["updated_at", "2020-07-30 04:05:16.927559"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 19ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 12822)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:16 -0500
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:16 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:16 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:16 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:16 -0500
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>27}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (11.3ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:16.964157"], ["updated_at", "2020-07-30 04:05:16.964157"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 38ms (Views: 0.3ms | ActiveRecord: 15.0ms | Allocations: 11977)
+
+
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>27}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>27}}
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>27}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>27}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (3.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (2.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:17.002654"], ["updated_at", "2020-07-30 04:05:17.002654"]]
+  [1m[36mNoodle Create (2.0ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:17.003574"], ["updated_at", "2020-07-30 04:05:17.003574"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.7ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:17.005451"], ["updated_at", "2020-07-30 04:05:17.005451"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:17.006631"], ["updated_at", "2020-07-30 04:05:17.006631"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 17ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 12681)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 24ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 16514)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 7.4ms | Allocations: 11549)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 22ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 15422)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:05:17 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>27}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 27], ["created_at", "2020-07-30 04:05:17.199427"], ["updated_at", "2020-07-30 04:05:17.199427"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 3917)
+
+
+Started POST "/payment" for ::1 at 2020-07-29 23:05:29 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 0.0ms | Allocations: 1345)
+
+
+  
+Stripe::InvalidRequestError (Missing required param: amount.):
+  
+app/controllers/charges_controller.rb:10:in `create'
+Started POST "/payment" for ::1 at 2020-07-29 23:07:55 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting '}'
+          currency: 'usd',
+          ^~~~~~~~
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:12: syntax error, unexpected ',', expecting end
+          currency: 'usd',
+                         ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:13: syntax error, unexpected ',', expecting end
+...     description: 'Send Noods',
+...                              ^
+/Users/ENJohnson/Development/code/Module5/SendNoods/backend/app/controllers/charges_controller.rb:14: syntax error, unexpected ',', expecting end
+...ion_check: 'accept_a_payment'},
+...                              ^):
+  
+app/controllers/charges_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/charges_controller.rb:12: syntax error, unexpected ',', expecting end
+app/controllers/charges_controller.rb:13: syntax error, unexpected ',', expecting end
+app/controllers/charges_controller.rb:14: syntax error, unexpected ',', expecting end
+app/controllers/charges_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/charges_controller.rb:12: syntax error, unexpected ',', expecting end
+app/controllers/charges_controller.rb:13: syntax error, unexpected ',', expecting end
+app/controllers/charges_controller.rb:14: syntax error, unexpected ',', expecting end
+Started POST "/payment" for ::1 at 2020-07-29 23:08:23 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 414ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2516)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 23:11:29 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>108, "user_id"=>7, "order"=>{"cost"=>108, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 108.0], ["user_id", 7], ["created_at", "2020-07-30 04:11:29.624623"], ["updated_at", "2020-07-30 04:11:29.624623"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 31ms (Views: 0.3ms | ActiveRecord: 14.0ms | Allocations: 15126)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>28}}
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.1ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.664375"], ["updated_at", "2020-07-30 04:11:29.664375"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 28ms (Views: 0.3ms | ActiveRecord: 9.3ms | Allocations: 12317)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>28}}
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>28}}
+Processing by NoodlesController#create as */*
+Processing by NoodlesController#create as */*
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>28}}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>28}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>28}}
+  [1m[36mNoodle Create (0.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.694596"], ["updated_at", "2020-07-30 04:11:29.694596"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 13069)
+
+
+  [1m[36mNoodle Create (1.2ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.698880"], ["updated_at", "2020-07-30 04:11:29.698880"]]
+  [1m[36mNoodle Create (1.2ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.702325"], ["updated_at", "2020-07-30 04:11:29.702325"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 16014)
+
+
+  [1m[36mNoodle Create (1.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.703062"], ["updated_at", "2020-07-30 04:11:29.703062"]]
+Completed 201 Created in 24ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 16673)
+
+
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>28}}
+  [1m[36mNoodle Create (1.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.708935"], ["updated_at", "2020-07-30 04:11:29.708935"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 31ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 22041)
+
+
+  [1m[36mNoodle Create (1.5ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.718567"], ["updated_at", "2020-07-30 04:11:29.718567"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 17018)
+
+
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>28}}
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 11ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 7684)
+
+
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.727628"], ["updated_at", "2020-07-30 04:11:29.727628"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 8ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 4886)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:11:29 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>28}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.3ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 28], ["created_at", "2020-07-30 04:11:29.921056"], ["updated_at", "2020-07-30 04:11:29.921056"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 3928)
+
+
+Started POST "/payment" for ::1 at 2020-07-29 23:11:35 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 428ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2161)
+
+
+Started POST "/payment" for ::1 at 2020-07-29 23:11:38 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 407ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2159)
+
+
+Started POST "/login" for ::1 at 2020-07-29 23:24:01 -0500
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 268ms (Views: 10.9ms | ActiveRecord: 8.2ms | Allocations: 10311)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 11]]
+Started POST "/login" for ::1 at 2020-07-29 23:28:10 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 272ms (Views: 10.5ms | ActiveRecord: 11.6ms | Allocations: 18726)
+
+
+Started POST "/login" for ::1 at 2020-07-29 23:29:44 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/auth_controller.rb:8:in `create'
+Completed 200 OK in 286ms (Views: 22.5ms | ActiveRecord: 22.3ms | Allocations: 27453)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 23:33:41 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>145.5, "user_id"=>7, "order"=>{"cost"=>145.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 145.5], ["user_id", 7], ["created_at", "2020-07-30 04:33:41.580961"], ["updated_at", "2020-07-30 04:33:41.580961"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 40ms (Views: 6.6ms | ActiveRecord: 14.2ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>29}}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.0ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.629854"], ["updated_at", "2020-07-30 04:33:41.629854"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Processing by NoodlesController#create as */*
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>29}}
+Completed 201 Created in 32ms (Views: 0.3ms | ActiveRecord: 11.7ms | Allocations: 16598)
+
+
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>29}}
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Processing by NoodlesController#create as */*
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>29}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>29}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>29}}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mNoodle Create (1.6ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.655106"], ["updated_at", "2020-07-30 04:33:41.655106"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (2.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.660163"], ["updated_at", "2020-07-30 04:33:41.660163"]]
+  [1m[36mNoodle Create (2.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.659369"], ["updated_at", "2020-07-30 04:33:41.659369"]]
+  [1m[36mNoodle Create (1.2ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.664008"], ["updated_at", "2020-07-30 04:33:41.664008"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.6ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.664687"], ["updated_at", "2020-07-30 04:33:41.664687"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 27ms (Views: 0.2ms | ActiveRecord: 7.0ms | Allocations: 18105)
+
+
+Completed 201 Created in 26ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 18348)
+
+
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 15159)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 28ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 19777)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Completed 201 Created in 27ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 19987)
+
+
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>29}}
+Processing by NoodlesController#create as */*
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>29}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>29}}
+Processing by NoodlesController#create as */*
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>29}}
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>29}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.0ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.687440"], ["updated_at", "2020-07-30 04:33:41.687440"]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoodle Create (1.0ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.691449"], ["updated_at", "2020-07-30 04:33:41.691449"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Load (2.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (2.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.698786"], ["updated_at", "2020-07-30 04:33:41.698786"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (1.5ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.696608"], ["updated_at", "2020-07-30 04:33:41.696608"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 18631)
+
+
+Completed 201 Created in 20ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 14862)
+
+
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNoodle Create (0.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.700066"], ["updated_at", "2020-07-30 04:33:41.700066"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 18ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 13035)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 24ms (Views: 0.4ms | ActiveRecord: 5.9ms | Allocations: 17787)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 15318)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:33:41 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>29}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 29], ["created_at", "2020-07-30 04:33:41.916221"], ["updated_at", "2020-07-30 04:33:41.916221"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 3937)
+
+
+Started POST "/payment" for ::1 at 2020-07-29 23:33:49 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 384ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2448)
+
+
+Started POST "/orders" for ::1 at 2020-07-29 23:35:28 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#create as */*
+  Parameters: {"cost"=>110.5, "user_id"=>7, "order"=>{"cost"=>110.5, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("cost", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cost", 110.5], ["user_id", 7], ["created_at", "2020-07-30 04:35:28.284317"], ["updated_at", "2020-07-30 04:35:28.284317"]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+Completed 201 Created in 31ms (Views: 0.4ms | ActiveRecord: 12.9ms | Allocations: 15180)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Processing by NoodlesController#create as */*
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>30}}
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>30}}
+Processing by NoodlesController#create as */*
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>30}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>30}}
+  [1m[36mNoodle Create (4.3ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.334963"], ["updated_at", "2020-07-30 04:35:28.334963"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Processing by NoodlesController#create as */*
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"naked", "group"=>"noodle", "order_id"=>30}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.9ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.344163"], ["updated_at", "2020-07-30 04:35:28.344163"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 44ms (Views: 0.3ms | ActiveRecord: 15.8ms | Allocations: 23747)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Completed 201 Created in 20ms (Views: 0.4ms | ActiveRecord: 6.8ms | Allocations: 13772)
+
+
+  [1m[36mOrder Load (3.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mNoodle Create (2.3ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.350751"], ["updated_at", "2020-07-30 04:35:28.350751"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (4.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (2.1ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.360052"], ["updated_at", "2020-07-30 04:35:28.360052"]]
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>11.5, "description"=>"bare", "group"=>"noodle", "order_id"=>30}}
+  [1m[36mNoodle Create (3.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "naked"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.361863"], ["updated_at", "2020-07-30 04:35:28.361863"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Processing by NoodlesController#create as */*
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>30}}
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 38ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 24799)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 34ms (Views: 0.2ms | ActiveRecord: 9.5ms | Allocations: 20489)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Completed 201 Created in 26ms (Views: 0.3ms | ActiveRecord: 12.7ms | Allocations: 14127)
+
+
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>12, "description"=>"cute", "group"=>"noodle", "order_id"=>30}}
+  [1m[36mNoodle Create (2.2ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 11.5], ["description", "bare"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.376286"], ["updated_at", "2020-07-30 04:35:28.376286"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.8ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.377771"], ["updated_at", "2020-07-30 04:35:28.377771"]]
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 201 Created in 18ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 12852)
+
+
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 10206)
+
+
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.6ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 12.0], ["description", "cute"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.385263"], ["updated_at", "2020-07-30 04:35:28.385263"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 7201)
+
+
+Started POST "/noodles" for ::1 at 2020-07-29 23:35:28 -0500
+Processing by NoodlesController#create as */*
+  Parameters: {"noodle"=>{"cost"=>13, "description"=>"miso", "group"=>"noodle", "order_id"=>30}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[36mNoodle Create (0.4ms)[0m  [1m[32mINSERT INTO "noodles" ("cost", "description", "group", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cost", 13.0], ["description", "miso"], ["group", "noodle"], ["order_id", 30], ["created_at", "2020-07-30 04:35:28.586183"], ["updated_at", "2020-07-30 04:35:28.586183"]]
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/noodles_controller.rb:5:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 3941)
+
+
+Started POST "/payment" for ::1 at 2020-07-29 23:35:33 -0500
+Processing by ChargesController#create as */*
+  Parameters: {"charge"=>{}}
+Completed 200 OK in 430ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2448)
+
+
